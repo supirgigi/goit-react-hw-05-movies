@@ -1,0 +1,25 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: calc((100% - 20px) / 2);
+}
+
+@media screen and (min-width: 480px) {
+  .item {
+    width: calc((100% - 60px) / 4);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .item {
+    width: calc((100% - 100px) / 6);
+  }
+}

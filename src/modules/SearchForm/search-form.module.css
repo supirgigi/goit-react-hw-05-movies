@@ -1,0 +1,9 @@
+.form {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.input {
+  font-size: 14px;
+  width: 200px;
+}
