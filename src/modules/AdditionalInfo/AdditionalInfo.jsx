@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './additional-info.module.css';
 
-const MovieAdditionalInfo = ({ id, from }) => {
+const AdditionalInfo = ({ id, from }) => {
   return (
     <div>
       <h3 className="title">Additional information</h3>
@@ -23,7 +23,7 @@ const MovieAdditionalInfo = ({ id, from }) => {
   );
 };
 
-MovieAdditionalInfo.propTypes = {
+AdditionalInfo.propTypes = {
   id: PropTypes.string.isRequired,
   from: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
@@ -31,4 +31,4 @@ MovieAdditionalInfo.propTypes = {
   }).isRequired,
 };
 
-export default MovieAdditionalInfo;
+export default AdditionalInfo;

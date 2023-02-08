@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
+import MovieList from 'shared/components/MovieList';
 import Loader from 'shared/components/Loader';
 import ErrorMsg from 'shared/components/ErrorMsg';
 import { searchMovies } from 'shared/api/movies';
 
-import MovieList from 'modules/MovieList';
 import SearchForm from 'modules/SearchForm';
 
 const MovieSearchPage = () => {

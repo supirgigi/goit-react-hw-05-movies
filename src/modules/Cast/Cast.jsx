@@ -5,7 +5,7 @@ import placeholderImg from 'shared/placeholder/placeholder.jpg';
 
 import styles from './cast.module.css';
 
-const MovieCast = ({ cast }) => {
+const Cast = ({ cast }) => {
   return (
     <ul className={styles.list}>
       {cast.map(({ name, character, id, profile_path }) => (
@@ -23,11 +23,11 @@ const MovieCast = ({ cast }) => {
   );
 };
 
-MovieCast.defaultProps = {
+Cast.defaultProps = {
   cast: [],
 };
 
-MovieCast.propTypes = {
+Cast.propTypes = {
   cast: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -38,4 +38,4 @@ MovieCast.propTypes = {
   ),
 };
 
-export default MovieCast;
+export default Cast;

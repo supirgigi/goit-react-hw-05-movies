@@ -1,22 +1,16 @@
 import { NavLink } from 'react-router-dom';
 import items from './items';
 
-import styles from './menu.module.css';
+import styles from './navbar.module.css';
 
-const getClassName = ({ isActive }) => {
-  const className = isActive ? `${styles.link} ${styles.active}` : styles.link;
-
-  return className;
-};
-
-const Menu = () => {
+const Navbar = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
         <ul className={styles.menu}>
           {items.map(({ id, to, text }) => (
             <li key={id}>
-              <NavLink className={getClassName} to={to}>
+              <NavLink className={styles.link} to={to}>
                 {text}
               </NavLink>
             </li>
@@ -27,4 +21,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default Navbar;

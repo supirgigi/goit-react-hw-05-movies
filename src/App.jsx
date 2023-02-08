@@ -1,6 +1,6 @@
 import { ToastContainer } from 'react-toastify';
 
-import Menu from 'modules/Menu';
+import Navbar from 'modules/Navbar';
 import UserRoutes from 'UserRoutes';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -9,7 +9,7 @@ import 'shared/styles/style.css';
 const App = () => {
   return (
     <>
-      <Menu />
+      <Navbar />
       <div className="container">
         <UserRoutes />
       </div>

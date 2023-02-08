@@ -12,8 +12,6 @@ const instance = axios.create({
 
 export const getTrending = async () => {
   const { data } = await instance.get('/trending/movie/day');
-  console.log(data);
-
   return data;
 };
 
@@ -23,28 +21,20 @@ export const searchMovies = async query => {
       query,
     },
   });
-  console.log(data);
-
   return data;
 };
 
 export const getMovieDetails = async id => {
   const { data } = await instance.get(`/movie/${id}`);
-  console.log(data);
-
   return data;
 };
 
 export const getMovieCast = async id => {
   const { data } = await instance.get(`/movie/${id}/credits`);
-  console.log(data);
-
   return data;
 };
 
 export const getMovieReviews = async id => {
   const { data } = await instance.get(`/movie/${id}/reviews`);
-  console.log(data);
-
   return data;
 };

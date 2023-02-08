@@ -21,6 +21,9 @@ const MovieCastPage = () => {
 
       try {
         const result = await getMovieCast(id);
+        if (result.cast.length === 0) {
+          throw new Error('No cast info available for this movie');
+        }
         setCast(result.cast);
       } catch (error) {
         setError(error);
@@ -36,7 +39,7 @@ const MovieCastPage = () => {
     <>
       {cast.length > 0 && <Cast cast={cast} />}
       {loading && <Loader />}
-      {error && <ErrorMsg />}
+      {error && <ErrorMsg error={error.message} />}
     </>
   );
 };
