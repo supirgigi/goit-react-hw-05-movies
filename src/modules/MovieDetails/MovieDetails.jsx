@@ -8,9 +8,15 @@ import styles from './movie-details.module.css';
 const MovieDetails = ({ movie }) => {
   const { genres, vote_average, poster_path, title, overview } = movie;
 
-  const movieGenres = genres.map(genre => genre.name).join(', ');
-  const userScore = `${(vote_average * 10).toFixed(0)}%`;
   const imgSrc = poster_path ? `${imageUrl}/${poster_path}` : placeholderImg;
+  const userScore = `${(vote_average * 10).toFixed(0)}%`;
+  const movieOverview = overview
+    ? overview
+    : 'No overview available for this movie';
+  const movieGenres =
+    genres.length > 0
+      ? genres.map(genre => genre.name).join(', ')
+      : 'No genres information available for this movie';
 
   return (
     <div className={styles.wrapper}>
@@ -19,7 +25,7 @@ const MovieDetails = ({ movie }) => {
         <h3 className={styles.title}>{title}</h3>
         <p>User Score: {userScore}</p>
         <p className={styles.subtitle}>Overview</p>
-        <p>{overview}</p>
+        <p>{movieOverview}</p>
         <p className={styles.subtitle}>Genres</p>
         <p>{movieGenres}</p>
       </div>
