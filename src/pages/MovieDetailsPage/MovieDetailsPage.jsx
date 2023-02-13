@@ -13,7 +13,7 @@ const MovieDetailsPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const { id } = useParams();
+  const { movieId } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from || '/';
@@ -25,7 +25,7 @@ const MovieDetailsPage = () => {
       setError(null);
 
       try {
-        const result = await getMovieDetails(id);
+        const result = await getMovieDetails(movieId);
         setMovie(result);
       } catch (error) {
         setError(error);
@@ -35,7 +35,7 @@ const MovieDetailsPage = () => {
     };
 
     fetchMovieDetails();
-  }, [id]);
+  }, [movieId]);
 
   return (
     <>
@@ -47,7 +47,7 @@ const MovieDetailsPage = () => {
       {movie.title && (
         <>
           <MovieDetails movie={movie} />
-          <AdditionalInfo from={from} id={id} />
+          <AdditionalInfo from={from} id={movieId} />
           <Outlet />
         </>
       )}

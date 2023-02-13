@@ -12,7 +12,7 @@ const MovieCastPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const { id } = useParams();
+  const { movieId } = useParams();
 
   useEffect(() => {
     const fetchMovieCast = async () => {
@@ -20,7 +20,7 @@ const MovieCastPage = () => {
       setError(null);
 
       try {
-        const { cast } = await getMovieCast(id);
+        const { cast } = await getMovieCast(movieId);
         if (cast.length === 0) {
           throw new Error('No cast info available for this movie');
         }
@@ -33,7 +33,7 @@ const MovieCastPage = () => {
     };
 
     fetchMovieCast();
-  }, [id]);
+  }, [movieId]);
 
   return (
     <>

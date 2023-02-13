@@ -12,7 +12,7 @@ const MovieReviewsPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const { id } = useParams();
+  const { movieId } = useParams();
 
   useEffect(() => {
     const fetchMovieReviews = async () => {
@@ -20,7 +20,7 @@ const MovieReviewsPage = () => {
       setError(null);
 
       try {
-        const { results } = await getMovieReviews(id);
+        const { results } = await getMovieReviews(movieId);
         if (results.length === 0) {
           throw new Error('No reviews available for this movie');
         }
@@ -33,7 +33,7 @@ const MovieReviewsPage = () => {
     };
 
     fetchMovieReviews();
-  }, [id]);
+  }, [movieId]);
 
   return (
     <>
