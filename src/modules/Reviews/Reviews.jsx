@@ -7,7 +7,7 @@ const Reviews = ({ reviews }) => {
     <ul className={styles.list}>
       {reviews.map(({ author, content, id }) => (
         <li key={id}>
-          <h4 className={styles.author}>Author: {author}</h4>
+          <h4 className={styles.title}>Author: {author}</h4>
           <p>{content}</p>
         </li>
       ))}

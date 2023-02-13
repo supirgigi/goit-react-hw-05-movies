@@ -44,16 +44,16 @@ const MovieSearchPage = () => {
     fetchMovies();
   }, [query]);
 
-  const changeQuery = query => {
+  const changeQuery = ({ query }) => {
     setSearchParams({ query });
   };
 
   return (
     <>
       <SearchForm onSubmit={changeQuery} />
-      {movies.length > 0 && <MovieList movies={movies} />}
       {loading && <Loader />}
       {error && <ErrorMsg error={error.message} />}
+      {movies.length > 0 && <MovieList movies={movies} />}
     </>
   );
 };

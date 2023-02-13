@@ -17,7 +17,7 @@ const HomePage = () => {
 
       try {
         const { results } = await getTrending();
-        setMovies(prevMovies => [...prevMovies, ...results]);
+        setMovies(results);
       } catch (error) {
         setError(error);
       } finally {
@@ -31,9 +31,9 @@ const HomePage = () => {
   return (
     <>
       <h2 className="title">Trending today</h2>
-      {movies.length > 0 && <MovieList movies={movies} />}
       {loading && <Loader />}
       {error && <ErrorMsg error={error.message} />}
+      {movies.length > 0 && <MovieList movies={movies} />}
     </>
   );
 };

@@ -16,7 +16,7 @@ const MovieDetailsPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from || '/movies';
+  const from = location.state?.from || '/';
   const goBack = () => navigate(from);
 
   useEffect(() => {
@@ -42,6 +42,8 @@ const MovieDetailsPage = () => {
       <button type="button" onClick={goBack} className="btn">
         Go back
       </button>
+      {loading && <Loader />}
+      {error && <ErrorMsg error={error.message} />}
       {movie.title && (
         <>
           <MovieDetails movie={movie} />
@@ -49,8 +51,6 @@ const MovieDetailsPage = () => {
           <Outlet />
         </>
       )}
-      {loading && <Loader />}
-      {error && <ErrorMsg error={error.message} />}
     </>
   );
 };

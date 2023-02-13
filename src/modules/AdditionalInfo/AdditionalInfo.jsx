@@ -27,8 +27,7 @@ AdditionalInfo.propTypes = {
   id: PropTypes.string.isRequired,
   from: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
-    search: PropTypes.string.isRequired,
-  }).isRequired,
+  }),
 };
 
 export default AdditionalInfo;

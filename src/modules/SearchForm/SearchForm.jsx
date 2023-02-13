@@ -20,15 +20,14 @@ export const SearchForm = ({ onSubmit }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const { query } = state;
 
-    if (query.trim() === '') {
+    if (state.query.trim() === '') {
       toast.error('Enter correct movie title');
       setState({ query: '' });
       return;
     }
 
-    onSubmit(query);
+    onSubmit({ ...state });
     setState({ query: '' });
   };
 

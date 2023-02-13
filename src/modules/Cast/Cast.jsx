@@ -11,8 +11,8 @@ const Cast = ({ cast }) => {
       {cast.map(({ name, character, id, profile_path }) => (
         <li key={id} className={styles.item}>
           <img
-            src={profile_path ? imageUrl + profile_path : placeholderImg}
-            alt={name + ' photo'}
+            src={profile_path ? `${imageUrl}/${profile_path}` : placeholderImg}
+            alt={name}
             className={styles.img}
           />
           <p>{name}</p>

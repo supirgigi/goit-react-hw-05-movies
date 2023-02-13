@@ -10,12 +10,11 @@ const MovieDetails = ({ movie }) => {
 
   const movieGenres = genres.map(genre => genre.name).join(', ');
   const userScore = `${(vote_average * 10).toFixed(0)}%`;
-  const imgSrc = poster_path ? imageUrl + poster_path : placeholderImg;
-  const imgAlt = title + ' poster';
+  const imgSrc = poster_path ? `${imageUrl}/${poster_path}` : placeholderImg;
 
   return (
     <div className={styles.wrapper}>
-      <img src={imgSrc} alt={imgAlt} className={styles.img} />
+      <img src={imgSrc} alt={title} className={styles.img} />
       <div className={styles.info}>
         <h3 className={styles.title}>{title}</h3>
         <p>User Score: {userScore}</p>

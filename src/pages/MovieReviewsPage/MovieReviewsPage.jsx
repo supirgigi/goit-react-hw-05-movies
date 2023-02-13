@@ -37,9 +37,9 @@ const MovieReviewsPage = () => {
 
   return (
     <>
-      {reviews.length > 0 && <Reviews reviews={reviews} />}
       {loading && <Loader />}
       {error && <ErrorMsg error={error.message} />}
+      {reviews.length > 0 && <Reviews reviews={reviews} />}
     </>
   );
 };
